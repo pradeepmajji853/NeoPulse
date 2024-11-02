@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Heart, Users, Brain, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-const Landing = () => {
+const Landing: React.FC = () => {
+  const navigate = useNavigate();
   const features = [
     {
       icon: Heart,
@@ -20,6 +22,10 @@ const Landing = () => {
       description: 'AI-powered recommendations to optimize your health decisions'
     }
   ];
+
+  const handleGetStarted = () => {
+    navigate('/services');
+  };
 
   return (
     <div className="pt-16">
@@ -56,6 +62,7 @@ const Landing = () => {
             transition={{ delay: 0.6 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={handleGetStarted}
             className="px-8 py-4 bg-teal-600 text-white rounded-full font-medium text-lg hover:bg-teal-700 transition-colors flex items-center space-x-2 mx-auto"
           >
             Get Started <ArrowRight className="w-5 h-5 ml-2" />
@@ -138,7 +145,10 @@ const Landing = () => {
             <h2 className="text-3xl font-bold text-white mb-8">
               Ready to Start Your Journey?
             </h2>
-            <button className="px-8 py-4 bg-white text-teal-600 rounded-full font-medium text-lg hover:bg-slate-100 transition-colors inline-flex items-center">
+            <button 
+              onClick={handleGetStarted}
+              className="px-8 py-4 bg-white text-teal-600 rounded-full font-medium text-lg hover:bg-slate-100 transition-colors inline-flex items-center"
+            >
               Join Neopulse Today
               <ChevronRight className="w-5 h-5 ml-2" />
             </button>

@@ -3,11 +3,12 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Activity } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const location = useLocation();
 
   const links = [
     { to: '/', label: 'Home' },
+    { to: '/services', label: 'Services' },
     { to: '/dashboard', label: 'Dashboard' },
     { to: '/community', label: 'Community' },
     { to: '/insights', label: 'AI Insights' }

@@ -5,8 +5,10 @@ import Landing from './pages/Landing';
 import Dashboard from './pages/Dashboard';
 import Community from './pages/Community';
 import Insights from './pages/Insights';
+import HealthServices from './pages/HealthServices';
+import MentalHealthBot from './components/MentalHealthBot.tsx';
 
-function App() {
+const App: React.FC = () => {
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-slate-50">
@@ -16,10 +18,12 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/community" element={<Community />} />
           <Route path="/insights" element={<Insights />} />
+          <Route path="/services" element={<HealthServices />} />
         </Routes>
+        <MentalHealthBot />
       </div>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
