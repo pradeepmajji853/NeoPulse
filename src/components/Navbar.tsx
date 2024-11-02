@@ -11,7 +11,8 @@ const Navbar: React.FC = () => {
     { to: '/services', label: 'Services' },
     { to: '/dashboard', label: 'Dashboard' },
     { to: '/community', label: 'Community' },
-    { to: '/insights', label: 'AI Insights' }
+    { to: '/insights', label: 'AI Insights' },
+    {to:'/pulseanalytics', label:'Pulse Analytics'}
   ];
 
   return (

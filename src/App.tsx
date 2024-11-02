@@ -7,6 +7,7 @@ import Community from './pages/Community';
 import Insights from './pages/Insights';
 import HealthServices from './pages/HealthServices';
 import MentalHealthBot from './components/MentalHealthBot.tsx';
+import DataAdvocacy from './pages/DataAdvocacy.tsx';
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,8 @@ const App: React.FC = () => {
           <Route path="/community" element={<Community />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/services" element={<HealthServices />} />
+          
+          <Route path="/pulseanalytics" element={<DataAdvocacy />} />
         </Routes>
         <MentalHealthBot />
       </div>

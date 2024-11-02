@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Stethoscope, 
@@ -8,7 +9,8 @@ import {
   MapPin,
   Clock,
   Pill,
-  Video
+  Video,
+  BarChart3
 } from 'lucide-react';
 
 const HealthServices = () => {
@@ -40,6 +42,13 @@ const HealthServices = () => {
       description: '24/7 virtual healthcare support and follow-up consultations',
       action: 'Start Session',
       support: 'Round the Clock'
+    },
+    {
+      icon: BarChart3,
+      title: 'Data-Driven Advocacy for Change',
+      description: 'Neopulse isn’t just about individual health; it’s about systemic improvement. We gather and analyze data to inform public health policies, working alongside local authorities, NGOs, and community leaders to address health disparities.',
+      action: 'Learn More',
+      initiative: 'Policy Collaboration'
     }
   ];
 
@@ -94,7 +103,7 @@ const HealthServices = () => {
             >
               <div className="flex items-start space-x-4">
                 <div className="p-3 bg-teal-50 rounded-xl">
-                  <service.icon className="w-8 h-8 text-teal-600" />
+                  {React.createElement(service.icon, { className: "w-8 h-8 text-teal-600" })}
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold text-slate-800 mb-2">
