@@ -111,50 +111,105 @@ const Landing: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-24 bg-gradient-to-br from-teal-50 via-white to-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-center"
+      {/* Spline Section with Overlays */}
+      <section className="relative w-full h-screen">
+        {/* Testimonial Overlay - Top Left */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="absolute top-12 left-12 max-w-md bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg z-10"
+        >
+          <h2 className="text-2xl font-bold text-slate-800 mb-4">
+            What Our Community Says
+          </h2>
+          <blockquote className="text-lg text-slate-600 italic mb-4">
+            "Neopulse has transformed how I approach my health. The personalized insights and supportive community have made all the difference."
+          </blockquote>
+          <div>
+            <p className="font-medium text-slate-800">Sarah Johnson</p>
+            <p className="text-slate-600">Community Member</p>
+          </div>
+        </motion.div>
+
+        {/* CTA Overlay - Bottom Right */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="absolute bottom-4 right-4 bg-white backdrop-blur-sm p-8 rounded-2xl shadow-lg z-10"
+        >
+          <h2 className="text-2xl font-bold text-slate-800 mb-4">
+            Ready to Start Your Journey?
+          </h2>
+          <button 
+            onClick={handleGetStarted}
+            className="px-6 py-3 bg-teal-600 text-white rounded-full font-medium text-lg hover:bg-teal-700 transition-colors inline-flex items-center"
           >
-            <h2 className="text-3xl font-bold text-slate-800 mb-8">
-              What Our Community Says
-            </h2>
-            <blockquote className="text-xl text-slate-600 italic">
-              "Neopulse has transformed how I approach my health. The personalized insights and supportive community have made all the difference."
-            </blockquote>
-            <div className="mt-4">
-              <p className="font-medium text-slate-800">Sarah Johnson</p>
-              <p className="text-slate-600">Community Member</p>
-            </div>
-          </motion.div>
-        </div>
+            Join Neopulse Today
+            <ChevronRight className="w-5 h-5 ml-2" />
+          </button>
+        </motion.div>
+
+        {/* Spline iframe */}
+        <iframe
+          src="https://my.spline.design/nexbotrobotcharacterconcept-4dbf2147b458fe5319ae8c62d131b355/"
+          frameBorder="0"
+          width="100%"
+          height="100%"
+        />
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-teal-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold text-white mb-8">
-              Ready to Start Your Journey?
-            </h2>
-            <button 
-              onClick={handleGetStarted}
-              className="px-8 py-4 bg-white text-teal-600 rounded-full font-medium text-lg hover:bg-slate-100 transition-colors inline-flex items-center"
-            >
-              Join Neopulse Today
-              <ChevronRight className="w-5 h-5 ml-2" />
-            </button>
-          </motion.div>
+      {/* Footer */}
+      <footer className="bg-slate-900 text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Company Info */}
+            <div className="space-y-4">
+              <h3 className="text-xl font-bold text-teal-400">Neopulse</h3>
+              <p className="text-slate-400">Empowering communities for better health outcomes through innovation and collaboration.</p>
+            </div>
+
+            {/* Quick Links */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">Quick Links</h3>
+              <ul className="space-y-2">
+                <li><a href="/about" className="text-slate-400 hover:text-teal-400 transition-colors">About Us</a></li>
+                <li><a href="/services" className="text-slate-400 hover:text-teal-400 transition-colors">Services</a></li>
+                <li><a href="/community" className="text-slate-400 hover:text-teal-400 transition-colors">Community</a></li>
+                <li><a href="/contact" className="text-slate-400 hover:text-teal-400 transition-colors">Contact</a></li>
+              </ul>
+            </div>
+
+            {/* Resources */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">Resources</h3>
+              <ul className="space-y-2">
+                <li><a href="/blog" className="text-slate-400 hover:text-teal-400 transition-colors">Blog</a></li>
+                <li><a href="/faq" className="text-slate-400 hover:text-teal-400 transition-colors">FAQ</a></li>
+                <li><a href="/support" className="text-slate-400 hover:text-teal-400 transition-colors">Support</a></li>
+                <li><a href="/privacy" className="text-slate-400 hover:text-teal-400 transition-colors">Privacy Policy</a></li>
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">Contact Us</h3>
+              <div className="text-slate-400">
+                <p>Email: contact@neopulse.com</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Address: 123 Health Street</p>
+                <p>San Francisco, CA 94105</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="mt-12 pt-8 border-t border-slate-800 text-center text-slate-400">
+            <p>© {new Date().getFullYear()} Neopulse. All rights reserved.</p>
+          </div>
         </div>
-      </section>
+      </footer>
     </div>
   );
 };
